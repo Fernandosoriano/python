@@ -147,10 +147,175 @@ def bloques_aleatorios(list, num):
         return cadena_unida
 def genera_trace_id():
         return f'{bloques_aleatorios(lista_concat(),8)}-{bloques_aleatorios(lista_concat(),4)}-{bloques_aleatorios(lista_concat(),4)}-{bloques_aleatorios(lista_concat(),4)}-{bloques_aleatorios(lista_concat(),12)}'
-print (genera_trace_id())
+# print (genera_trace_id())
 ##################################################################################################
 # Lo mismo que el código que use para formar el trace_id, pero en tres líneas 
 # usando la libreria uuid de python
 import uuid
 traceId = uuid.uuid4()
-print(traceId)
+# print(traceId)
+
+
+# for i in lista_devuelta:
+#         for j in lista_a_considerar:
+#                 if i == j:
+#                         lista_a_sellar.append(i)
+# print(lista_a_sellar)
+
+# def documentos_a_sellar(lista_idDocs_deben_sellarse, lista_docs_creditkit):
+#         lista_con_idDocs_a_sellar = []
+#         for id_doc_creditkit in lista_docs_creditkit:
+#                 for id_doc_a_sellar in lista_idDocs_deben_sellarse:
+#                         if id_doc_creditkit == id_doc_a_sellar:
+#                                 lista_con_idDocs_a_sellar.append(id_doc_creditkit)
+#         return lista_con_idDocs_a_sellar
+
+def documentos_a_sellar(lista_docs_creditkit):
+        lista_idDocs_deben_sellarse = [121,137,120,136, 135, 149, 182, 183]
+        lista_con_idDocs_a_sellar = []
+        for id_doc_creditkit in lista_docs_creditkit:
+                for id_doc_a_sellar in lista_idDocs_deben_sellarse:
+                        if id_doc_creditkit == id_doc_a_sellar:
+                                lista_con_idDocs_a_sellar.append(id_doc_creditkit)
+        return lista_con_idDocs_a_sellar
+
+# lista_a_considerar_p = [121,137,120,136, 135, 149, 182, 183]
+lista_devuelta_p = [127, 140, 137, 182]
+# print(documentos_a_sellar(lista_devuelta_p))
+
+
+var_global = ""
+lista_por_recorrer = [1,2,3,4,5,6]
+
+
+# for num in lista_por_recorrer:
+#         var_global = "33"
+#         num = num + 1
+#         print (num)
+# print(var_global)
+
+data =  [
+        {
+            "id_proceso_venta": 6691697,
+            "id_individuo": 201777968,
+            "id_funcion_participante": 1.0,
+            "id_tipo_proceso_venta": "A01",
+            "id_oferta_fabrica": 13027,
+            "id_tipo_punto_venta": 1,
+            "id_punto_venta": 242,
+            "id_macro_proceso": "MPC01",
+            "id_proceso": "PC002",
+            "id_canal": "C01",
+            "id_medios_digitales": 'null',
+            "id_esquema": "ECDCT",
+            "id_estatus_esquema": "EC200",
+            "estatus_esquema_descripcion": "Solicitante con oferta confirmada",
+            "id_motivo_estatus": 'null',
+            "descripcion_motivo_estatus": "",
+            "agrupador": 1,
+            "fechas": [],
+            "preferencia_atencion": [],
+            "fecha_creacion": "2022-07-15 17:19:31",
+            "fecha_modificacion": "2022-07-23 02:03:26",
+            "id_oferta_fabrica_general": 3171,
+            "id_oferta_fabrica_persona": 13027,
+            "id_promocion": 'null',
+            "id_pais": 1.0,
+            "id_empresa": 2.0,
+            "id_canal_entrada": 7.0,
+            "id_tipo_estrategia": 'null',
+            "id_destino": 11,
+            "otro_destino": 'null',
+            "id_tipo_ciclo": 'null',
+            "valor_ciclo": 'null',
+            "id_tipo_participante": 2.0,
+            "id_tipo_renovacion": 'null',
+            "id_estado_proceso_venta": "E001"
+        },
+        {
+            "id_proceso_venta": 6691698,
+            "id_individuo": 201777968,
+            "id_funcion_participante": 1.0,
+            "id_tipo_proceso_venta": "A01",
+            "id_oferta_fabrica": 13027,
+            "id_tipo_punto_venta": 1,
+            "id_punto_venta": 242,
+            "id_macro_proceso": "MPC01",
+            "id_proceso": "PC002",
+            "id_canal": "C01",
+            "id_medios_digitales": 'null',
+            "id_esquema": "ECDCT",
+            "id_estatus_esquema": "EC200",
+            "estatus_esquema_descripcion": "Solicitante con oferta confirmada",
+            "id_motivo_estatus": 'null',
+            "descripcion_motivo_estatus": "",
+            "agrupador": 1,
+            "fechas": [],
+            "preferencia_atencion": [],
+            "fecha_creacion": "2022-07-15 17:19:31",
+            "fecha_modificacion": "2022-07-23 02:03:26",
+            "id_oferta_fabrica_general": 3171,
+            "id_oferta_fabrica_persona": 13027,
+            "id_promocion": 'null',
+            "id_pais": 1.0,
+            "id_empresa": 2.0,
+            "id_canal_entrada": 7.0,
+            "id_tipo_estrategia": 'null',
+            "id_destino": 11,
+            "otro_destino": 'null',
+            "id_tipo_ciclo": 'null',
+            "valor_ciclo": 'null',
+            "id_tipo_participante": 2.0,
+            "id_tipo_renovacion": 'null',
+            "id_estado_proceso_venta": "E001"
+        }
+    ]
+lista_procesos_venta = []
+
+if len (data) == 1:
+        pass # hacer proceso de sellado normal, pero no habria el segundo for de recorrer todos los individuos
+else:
+        for soli_obj in data:  # Quizá este for ya NO deba ir, porque se haria el proceso de sellado para tooodos los individuos que vengan en el arrary data, y esto sólo se debe hacecr para el padre
+                solicitante = soli_obj # almacenar en memoria el soli para el proceso de venta 
+                id_proceso_venta = solicitante.get('id_proceso_venta') #
+                lista_procesos_venta.append(id_proceso_venta)
+                
+# print (lista_procesos_venta)
+
+
+def identifica_pv_padre (proceso_venta):
+        if proceso_venta == 6691698:
+                return proceso_venta        
+list_proceso_venta_padre = list(filter(identifica_pv_padre, lista_procesos_venta))
+
+# print(list_proceso_venta_padre[0])
+padre = 3
+lista = [1,2,3,4,5]
+lista.append(padre)
+lista_completa = lista
+# print(lista)
+
+lista_docs_sellados = []
+lista_id_clients = [124,123,345, 1234]
+lista_docs_ya_sellados = [123,127]
+
+for id_doc in lista_docs_ya_sellados:
+        id_plantilla = 3
+        base64 = 64
+        file_name = "doc_name"
+        lista_docs_sellados.append({
+                                    'id_plantilla': id_plantilla,
+                                    'base64' : base64,
+                                    'file_name': file_name
+                                    })
+        
+# print(lista_docs_sellados)
+
+lista_content = []
+for doc_sellado in lista_docs_sellados:
+        for id_cliente in lista_id_clients:
+                lista_content.append(doc_sellado)
+
+print(lista_docs_sellados)
+print(lista_content)
+                
