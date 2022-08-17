@@ -7,3 +7,14 @@ def factorialRecursivoTernario (numero):
         # else:
         #      return numero * factorial(numero-1)
 # print(factorialRecursivoTernario(1))
+
+# 2.- A digital-to-analog converter 
+#Fuente: https://edabit.com/challenge/AJGqpNL2yAyhbdpvB
+
+def V_DAC(value):
+        analog_voltage_measured  = (value * 5 ) / 1023
+        print (round (analog_voltage_measured, 2))
+V_DAC(0)
+V_DAC(1023)
+V_DAC(400)
+        
