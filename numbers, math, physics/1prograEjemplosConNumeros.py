@@ -82,6 +82,39 @@ def factorial(num):
 # Versión con recursividad, vista en las soluciones del link :   
 def factorial(num):
 	return 1 if num < 2 else num * factorial(num - 1)
+
+### 6.-War of Numbers
+# There's a great war between the even and odd numbers. Many numbers already lost
+# their lives in this war and it's your task to end this. You have to determine
+# which group sums larger: the evens or the odds. The larger group wins.
+# Create a function that takes a list of integers, sums the even and odd numbers
+# separately, then returns the difference between the sums of the even and odd
+# numbers.
+# FUENTE: https://edabit.com/challenge/rMr8yRxS8TeF9pDyn
+
+def war_of_numbers(lst):
+    suma_par     = 0
+    suma_inpar   = 0
+    list_pares   = []
+    list_inpares = []
+    for num in lst:
+        if num % 2 == 0:
+            list_pares.append(num)
+        elif num % 2 != 0:
+            list_inpares.append(num)
+    for num in list_pares:
+        suma_par = suma_par + num
+    for num in list_inpares:
+        suma_inpar = suma_inpar + num
+    if suma_par > suma_inpar:
+        return suma_par - suma_inpar
+    return suma_inpar - suma_par
+# El más votado en el link fuente:
+def war_of_numbers(lst):
+  return abs(sum(n if n % 2 else -n for n in lst))
+    
+# print(war_of_numbers([5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243]))
+
         
     
 
