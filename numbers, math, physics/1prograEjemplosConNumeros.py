@@ -83,7 +83,7 @@ def factorial(num):
 def factorial(num):
 	return 1 if num < 2 else num * factorial(num - 1)
 
-### 6.-War of Numbers
+### 6.- War of Numbers
 # There's a great war between the even and odd numbers. Many numbers already lost
 # their lives in this war and it's your task to end this. You have to determine
 # which group sums larger: the evens or the odds. The larger group wins.
@@ -111,12 +111,18 @@ def war_of_numbers(lst):
     return suma_inpar - suma_par
 # El más votado en el link fuente:
 def war_of_numbers(lst):
-  return abs(sum(n if n % 2 else -n for n in lst))
-    
+  return abs(sum(n if n % 2 else -n for n in lst))    
 # print(war_of_numbers([5, 9, 45, 6, 2, 7, 34, 8, 6, 90, 5, 243]))
 
-        
-    
-
-
+### 7.- How Heavy Is It?
+# Given radius r and height h (in cm), calculate the mass of a cylinder when 
+# it's filled with water and the cylinder itself doesn't weigh anything. 
+# The desired output should be given in kg and rounded to two decimal places.
+# FUENTE: https://edabit.com/challenge/iP4ixkQffELyHvHi5
+def weight(r, h):
+    from math import pi
+    vol_cm = (pi * r**2) * h
+    vol_dm = (vol_cm) * (1/10)**3 #ya que 1dm = 10cm
+    return round(vol_dm, 2)
+# weight(15, 10)
 
