@@ -126,3 +126,18 @@ def weight(r, h):
     return round(vol_dm, 2)
 # weight(15, 10)
 
+### 8.- Find the Other Two Side Lengths
+# Given the shortest side of a 30° by 60° by 90° triangle, find out the other
+# two sides. Return the longest side and medium-length side in that order.
+def returnsides(length):
+    import math
+    hypotenuse = length * 2
+    medium_length = round(length * math.sqrt(3),2)
+    return (hypotenuse, medium_length)
+# Solución más votada:
+returnsides = lambda l:(2*l,round(1.7320*l,2))   
+# print(returnsides(1))
+
+
+
+
