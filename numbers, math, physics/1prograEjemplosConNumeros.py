@@ -138,6 +138,17 @@ def returnsides(length):
 returnsides = lambda l:(2*l,round(1.7320*l,2))   
 # print(returnsides(1))
 
+### 9.-Right Shift by Division
+# The right shift operation is similar to floor division by powers of two.
+# Sample calculation using the right shift operator ( >> ):
+# FUENTE: https://edabit.com/challenge/noqQNSr5o9qzvXWzL
+shift_to_right = lambda x, y: (x) // (2**y)
+# print(shift_to_right(-5, 1))
 
+### 10.-Length of Number
+# Create a function that takes a number num and returns its length.
+def number_length(num):
+    num_str = str(num)
+    return len(num_str)
 
-
+print(number_length(0))
