@@ -34,8 +34,28 @@ def remove_repeats(s):
        return s[0]+remove_repeats(s[1:])
    return remove_repeats(s[1:])
 
-print(remove_repeats("aaabbbcccaaa"))
+# print(remove_repeats("aaabbbcccaaa"))
 # print(remove_repeats("bookkeeper"))
 # remove_repeats("geeksforgeeks")
 # remove_repeats("aaabbbccc") => abc
 # FUENTE: https://www.geeksforgeeks.org/remove-consecutive-duplicates-string/
+
+### 5.-How Many Vowels?
+# Create a function that takes a string and returns the number (count) of vowels
+# contained within it.
+def count_vowels(txt):
+    l = ['a','e','i','o','u']
+    suma = 0
+    for letra in txt:
+        if letra.lower() in l:
+            suma = suma + 1
+    return suma
+# El más votado por la comunidad:
+# def count_vowels(txt):
+#   return sum([1 for x in txt.lower() if x in 'aeiou']) 
+
+# Modifiqué el más votado por una fun lambda:
+count_vowels_lam = lambda txt: sum([1 for x in txt.lower() if x in 'aeiou']) 
+
+# FUENTE:https://edabit.com/challenge/p88k8yHRPTMPt4bBo
+# print(count_vowels_lam("Prediction"))

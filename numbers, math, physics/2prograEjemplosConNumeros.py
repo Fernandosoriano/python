@@ -24,5 +24,19 @@ fizz_buzz = lambda num:"FizzBuzz" if num % 3 == 0 and num % 5 == 0 else 'Fizz' i
 count_ones = lambda num: format(num, "b").count('1')
 # print(count_ones(999))
 
-
+### 3.-Pythagorean Triplet
+# Create a function that validates whether three given integers form a Pythagorean
+# triplet. The sum of the squares of the two smallest integers must equal the
+# square of the largest number to be validated.
+def is_triplet(n1, n2, n3):
+    l = [n1, n2, n3]
+    hyp = max(l)
+    catetos = list(filter(lambda n: n != hyp, l))
+    return True if catetos[0]**2 + catetos[1]**2 == hyp**2 else False
+# print(is_triplet(3, 4, 5))
+# el más votado:
+def is_triplet(*n): #observa que usa *args, bibliografia= https://www.programiz.com/python-programming/args-and-kwargs
+    a, b, c = sorted(n) #y sorted, bibliografia = https://www.programiz.com/python-programming/methods/built-in/sorted
+    return a*a + b*b == c*c
+# FUENTE: https://edabit.com/challenge/Ns4Sjh7KK58ofAph8
 
