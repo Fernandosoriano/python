@@ -59,3 +59,16 @@ count_vowels_lam = lambda txt: sum([1 for x in txt.lower() if x in 'aeiou'])
 
 # FUENTE:https://edabit.com/challenge/p88k8yHRPTMPt4bBo
 # print(count_vowels_lam("Prediction"))
+
+### 6.-Default Mood
+# Create a function that takes in a current mood and return a sentence in 
+# the following format: "Today, I am feeling {mood}". However, if no argument 
+# is passed, return "Today, I am feeling neutral".
+
+def mood_today(mood = 'neutral'):
+    if mood:
+        return "Today, I am feeling" + " " + mood 
+    return "Today, I am feeling neutral" 
+
+# mood_today = lambda mood = 'neutral': f'Today, I am feeling {mood}' if mood else f"Today, I am feeling {mood}" 
+print(mood_today())
