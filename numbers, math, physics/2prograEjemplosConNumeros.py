@@ -40,3 +40,25 @@ def is_triplet(*n): #observa que usa *args, bibliografia= https://www.programiz.
     return a*a + b*b == c*c
 # FUENTE: https://edabit.com/challenge/Ns4Sjh7KK58ofAph8
 
+### 4.-Flatten the Curve
+# Given a list of integers, replace every number with the mean of all numbers.
+
+def flatten_the_curve(lst = []):
+    if lst:
+        import statistics
+        mean = round(statistics.mean(lst),1)
+        return [mean for num in lst]
+    return []
+
+print(flatten_the_curve([]))   
+	
+
+
+
+
+
+# import statistics
+# data = [11, 21, 11, 19, 46, 21, 19, 29, 21, 18, 3, 11, 11]
+# x = statistics.mean(data)
+# print(round(x,1))
+
