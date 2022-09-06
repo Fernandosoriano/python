@@ -50,15 +50,17 @@ def flatten_the_curve(lst = []):
         return [mean for num in lst]
     return []
 
-print(flatten_the_curve([]))   
+# print(flatten_the_curve([]))   
 	
-
-
-
-
-
 # import statistics
 # data = [11, 21, 11, 19, 46, 21, 19, 29, 21, 18, 3, 11, 11]
 # x = statistics.mean(data)
 # print(round(x,1))
 
+### 5.- Geometry 1: Length of Line Segment
+# Write a function that takes coordinates of two points on a two-dimensional
+# plane and returns the length of the line segment connecting those two points.
+
+import math
+line_length = lambda x,y: round(math.sqrt((y[0]-x[0])**2+ (y[1]-x[1])**2),2)
+print(line_length([15, 7], [22, 11]))
