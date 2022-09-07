@@ -51,7 +51,7 @@ def promedio(lista):
         suma += i
     promedio = suma/len(lista)
     print(promedio)
-promedio([9,8,7,6,5,4,3,2,1,0])
+# promedio([9,8,7,6,5,4,3,2,1,0])
 # def imprimirType(lista):
 #     print(type(lista))
 # imprimirType([2,4,5,6])
@@ -112,4 +112,14 @@ def mas_larga(lista):
         masLarga = i if len(i) >= len(masLarga) else masLarga 
     print(masLarga)        
         # print (len(i))
-mas_larga(["Fernando0000000000000000000", "fernandiosooooooooo", "Jocelynisca", "Naremi"])
+# mas_larga(["Fernando0000000000000000000", "fernandiosooooooooo", "Jocelynisca", "Naremi"])
+
+### 7.-Fix the Error: Filtering out Empty Arrays
+# I am trying to filter out empty arrays from an array. In other words, I want to
+# transform something that looks like this: ["a", "b", [], [], [1, 2, 3]] to
+# look like ["a", "b", [1, 2, 3]]. My code looks like this:
+def remove_empty_arrays(arr):
+		return [x for x in arr if x != [] ]
+# FUENTE: https://edabit.com/challenge/raN9mCseAYJvoJQtQ
+# print(remove_empty_arrays([1, 2, [], 4]))
+

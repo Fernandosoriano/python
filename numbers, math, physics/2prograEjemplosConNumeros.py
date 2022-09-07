@@ -63,4 +63,21 @@ def flatten_the_curve(lst = []):
 
 import math
 line_length = lambda x,y: round(math.sqrt((y[0]-x[0])**2+ (y[1]-x[1])**2),2)
-print(line_length([15, 7], [22, 11]))
+# print(line_length([15, 7], [22, 11]))
+
+### 6.- Sum of Evenly Divisible Numbers from a Range
+# Create a function that takes three arguments a, b, c and returns the
+# sum of the numbers that are evenly divided by c from the range a, b inclusive.
+def evenly_divisible(a,b,c):
+    lst = []
+    for num in range(a,b+1):
+        if num % c == 0:
+            lst.append(num)
+    return sum(lst)
+# FUENTE: https://edabit.com/challenge/nWtgKSNGQ3sB52rQ8
+# el más votado:
+#     def evenly_divisible(a, b, c):
+#   return sum(i for i in range(a, b+1) if not i%c)
+# print(evenly_divisible(1, 10, 20))
+# print(evenly_divisible(1, 10, 2))
+# print(evenly_divisible(1, 10, 3))
