@@ -81,3 +81,15 @@ def evenly_divisible(a,b,c):
 # print(evenly_divisible(1, 10, 20))
 # print(evenly_divisible(1, 10, 2))
 # print(evenly_divisible(1, 10, 3))
+
+### 7.-Find the Discount
+# Create a function that takes two arguments: the original price and the
+# discount percentage as integers and returns the final price after the discount.
+# def dis(price, discount):
+dis = lambda price, discount: round(price - ((discount/100)*price),2)
+# FUENTE:https://edabit.com/challenge/cXnkmRdxqJrwdsP4n 
+# print(dis(1500, 50))
+# print(dis(89, 20))
+# print(dis(100, 75))
+
+

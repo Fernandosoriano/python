@@ -1,4 +1,5 @@
 # 1.-
+
 def invertirCadena (cadena):
     cadenaInvertida = cadena[::-1]
     print (cadenaInvertida)
@@ -71,4 +72,22 @@ def mood_today(mood = 'neutral'):
     return "Today, I am feeling neutral" 
 
 # mood_today = lambda mood = 'neutral': f'Today, I am feeling {mood}' if mood else f"Today, I am feeling {mood}" 
-print(mood_today())
+# print(mood_today())
+
+### 7.-Shuffle the Name
+# Create a function that takes a string (will be a person's first and last name)
+# and returns a string with the first and last name swapped.
+
+# def name_shuffle(txt):
+#     listName = txt.split()
+#     return f"{listName[1]} {listName[0]}"
+# def name_shuffle(txt):
+#     # listName = txt.split()
+#     return "{0} {1}".format(txt.split()[1], txt.split()[0])
+# name_shuffle = lambda txt:
+name_shuffle = lambda txt: "{0} {1}".format(txt.split()[1], txt.split()[0])
+# FUENTE:https://edabit.com/challenge/pKSL3HtApPYAJ72CJ 
+# Examples
+print(name_shuffle("Donald Trump"))
+# print(name_shuffle("Rosie O'Donnell"))
+# print(name_shuffle("Seymour Butts"))
