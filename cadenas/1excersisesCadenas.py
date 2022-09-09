@@ -88,6 +88,21 @@ def mood_today(mood = 'neutral'):
 name_shuffle = lambda txt: "{0} {1}".format(txt.split()[1], txt.split()[0])
 # FUENTE:https://edabit.com/challenge/pKSL3HtApPYAJ72CJ 
 # Examples
-print(name_shuffle("Donald Trump"))
+# print(name_shuffle("Donald Trump"))
 # print(name_shuffle("Rosie O'Donnell"))
 # print(name_shuffle("Seymour Butts"))
+
+
+
+### 8.-Hiding the Card Number
+# Write a function that takes a credit card number and only displays the last four characters.
+# The rest of the card number must be replaced by ************.
+
+card_hide = lambda card: ''.join(['*' for i in card[:len(card)-4]]) + (card[-4:])
+# print(card_hide("1234123456785678"))
+# print(card_hide("8754456321113213"))
+# print(card_hide("35123413355523"))
+
+
+
+
