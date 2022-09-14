@@ -103,6 +103,27 @@ card_hide = lambda card: ''.join(['*' for i in card[:len(card)-4]]) + (card[-4:]
 # print(card_hide("8754456321113213"))
 # print(card_hide("35123413355523"))
 
+### 9.-The Reverser!
+# The "Reverser" takes a string as input and returns that string in reverse order,
+# with the opposite case.
+reverse = lambda txt: txt[::-1].swapcase()
+# print(reverse("Hello World"))
 
+### 10.-Hamming Distance
+# Hamming distance is the number of characters that differ between two strings.
+# To illustrate:
+# String1: "abcbba"
+# String2: "abcbda"
+# Hamming Distance: 1 - "b" vs. "d" is the only difference.
+# hamming_distance("abcde", "bcdef")
+def hamming_distance(txt1, txt2):
+    lst = list(zip(txt1, txt2)) #DOCU for zip: https://docs.python.org/3/library/functions.html#zip
+    return sum([1 for t in lst if t[0] != t[1] ])
+# FUENTE: https://edabit.com/challenge/nfWirHJzNRBMAp9Df
+# print(hamming_distance("abcde", "bcdef"))
+# print(hamming_distance("abcde", "abcde"))
+# print(hamming_distance("strong", "strung"))
 
-
+# El más votado: 
+# def hamming_distance(txt1, txt2):
+# 	return sum(x!=y for (x,y) in zip(txt1,txt2))
