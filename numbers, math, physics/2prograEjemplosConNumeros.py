@@ -61,6 +61,7 @@ def flatten_the_curve(lst = []):
 # Write a function that takes coordinates of two points on a two-dimensional
 # plane and returns the length of the line segment connecting those two points.
 
+from cmath import sqrt
 import math
 line_length = lambda x,y: round(math.sqrt((y[0]-x[0])**2+ (y[1]-x[1])**2),2)
 # print(line_length([15, 7], [22, 11]))
@@ -91,5 +92,16 @@ dis = lambda price, discount: round(price - ((discount/100)*price),2)
 # print(dis(1500, 50))
 # print(dis(89, 20))
 # print(dis(100, 75))
+
+### 8.-Circle or Square
+# Given the radius of a circle and the area of a square, return True if
+# the circumference of the circle is greater than the square's perimeter and
+# False if the square's perimeter is greater than the circumference of the circle
+
+# def circle_or_square(rad, area):
+circle_or_square = lambda rad, area: True if 2*3.14*rad > (area**0.5) * 4 else False
+# print(circle_or_square(16, 625))
+# print(circle_or_square(5, 100) )
+# print(circle_or_square(8, 144))
 
 
