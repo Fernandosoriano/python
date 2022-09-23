@@ -137,3 +137,12 @@ def find_odd(lst):
 # print(find_odd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]))
 # print(find_odd([20, 1, 1, 2, 2, 3, 3, 5, 5, 4, 20, 4, 5]))
 # print(find_odd([10]))
+
+### 9.-Sum of Odd and Even Numbers
+# Write a function that takes a list of numbers and returns a list with two elements:
+# The first element should be the sum of all even numbers in the list.
+# The second element should be the sum of all odd numbers in the list.
+# def sum_odd_and_even(lst):
+# FUENTE:https://edabit.com/challenge/5XXXppAdfcGaootD9
+sum_odd_and_even = lambda lst: [sum([e for e in lst if e%2 ==0]),sum([o for o in lst if o%2 !=0])]
+# print(sum_odd_and_even([1, 2, 3, 4, 5, 6]))
