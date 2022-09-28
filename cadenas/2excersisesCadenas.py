@@ -20,3 +20,21 @@ XO = lambda txt: True if txt.lower().count('x') == txt.lower().count('o') else F
 # ​
 #   return text.lower().count('x')==text.lower().count('o')
 # print(XO("ooxx"))
+
+### 3.-Vowel Replacer
+# Create a function that replaces all the vowels in a string with a
+# specified character.
+def replace_vowels(txt, ch):
+    lst = []
+    for l in txt.lower():
+        if l in ('a','e','i','o','u'):
+            l = ch 
+        lst.append(l)        
+    return(''.join(lst))
+# La más votada:
+# def replace_vowels(txt, ch):
+#   return ''.join([i if i not in 'aeoui' else ch for i in txt])
+# FUENTE:https://edabit.com/challenge/Ggq8GtYPeHJQg4v7q
+# print(replace_vowels("thE aardvark","#"))
+# print(replace_vowels("minnie mouse", "?"))
+# print(replace_vowels("shakespeare", "*"))
