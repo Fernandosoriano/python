@@ -146,3 +146,20 @@ def find_odd(lst):
 # FUENTE:https://edabit.com/challenge/5XXXppAdfcGaootD9
 sum_odd_and_even = lambda lst: [sum([e for e in lst if e%2 ==0]),sum([o for o in lst if o%2 !=0])]
 # print(sum_odd_and_even([1, 2, 3, 4, 5, 6]))
+
+# c  = 'w2'
+# if c.endswith('2'):
+#     print(c + '2')
+# def jazzify(lst):
+#     pass
+
+### 10.-Instant JAZZ
+# Create a function which concatenates the number 7 to the end of every chord 
+# in a list. Ignore all chords which already end with 7.
+jazzify = lambda lst: [i+'7' if not i.endswith('7') else i for i in lst ] 
+# FUENTE:https://edabit.com/challenge/jhghtvT2s58FnDr5T
+# print(jazzify(["G", "F", "C"]))
+# print(jazzify(["Dm", "G", "E", "A"]))
+# print(jazzify(["F7", "E7", "A7", "Ab7", "Gm7", "C7"]))
+# print(jazzify([]))
+    

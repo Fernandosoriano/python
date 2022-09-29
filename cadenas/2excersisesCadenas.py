@@ -38,3 +38,15 @@ def replace_vowels(txt, ch):
 # print(replace_vowels("thE aardvark","#"))
 # print(replace_vowels("minnie mouse", "?"))
 # print(replace_vowels("shakespeare", "*"))
+
+### 4.-Return the Index of All Capital Letters
+# Create a function that takes a single string as argument and returns
+# an ordered list containing the indices of all capital letters in the string.
+index_of_caps = lambda word: [word.index(i) for i in word if i.isupper()]
+# FUENTE: https://edabit.com/challenge/rQkriLJBc9CbfRbJb
+
+# print(index_of_caps("eDaBiT"))
+# print(index_of_caps("eQuINoX"))
+# print(index_of_caps("determine"))
+# print(index_of_caps("STRIKE"))
+# print(index_of_caps("sUn"))
