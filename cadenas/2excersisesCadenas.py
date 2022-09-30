@@ -50,3 +50,12 @@ index_of_caps = lambda word: [word.index(i) for i in word if i.isupper()]
 # print(index_of_caps("determine"))
 # print(index_of_caps("STRIKE"))
 # print(index_of_caps("sUn"))
+
+### 5.-Repeating Letters
+# Create a function that takes a string and returns a string in which each 
+# character is repeated once.
+double_char = lambda txt: ''.join([l*2 for l in txt])
+# FUENTE: https://edabit.com/challenge/HpqLxNqqRvMQoz8ME
+# print(double_char("String"))
+# print(double_char("Hello World!")) 
+# print(double_char("1234!_ "))
