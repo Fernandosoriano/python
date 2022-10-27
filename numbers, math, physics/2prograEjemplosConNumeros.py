@@ -104,4 +104,11 @@ circle_or_square = lambda rad, area: True if 2*3.14*rad > (area**0.5) * 4 else F
 # print(circle_or_square(5, 100) )
 # print(circle_or_square(8, 144))
 
+### 9.-Basic Calculator
+# Create a function that takes two numbers and a mathematical operator + - / * 
+# and will perform a calculation with the given numbers.
+calculator = lambda num1, operator, num2: "Can't divide by 0!" if num2 == 0 else eval('num1' + operator + 'num2') 
+# FUENTE:https://edabit.com/challenge/ZdnwC3PsXPQTdTiKf
+# print(calculator(2, '/', 2)) 
+
 
