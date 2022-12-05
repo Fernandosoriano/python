@@ -1,4 +1,4 @@
-### 1.-FizzBuzz Interview Question
+### 1.-FizzBuzz Interview Question ###
 # Create a function that takes a number as an argument and returns "Fizz",
 # "Buzz" or "FizzBuzz".
 
@@ -13,7 +13,7 @@
 fizz_buzz = lambda num:"FizzBuzz" if num % 3 == 0 and num % 5 == 0 else 'Fizz' if num % 3 == 0 else "Buzz" if num % 5 == 0 else str(num)
 # print(fizz_buzz(15))
 
-### 2.-Count Ones in Binary Representation of Integer
+### 2.-Count Ones in Binary Representation of Integer ###
 
 # Count the amount of ones in the binary representation of an integer. For example,
 # since 12 is 1100 in binary, the return value should be 2.
@@ -24,7 +24,7 @@ fizz_buzz = lambda num:"FizzBuzz" if num % 3 == 0 and num % 5 == 0 else 'Fizz' i
 count_ones = lambda num: format(num, "b").count('1')
 # print(count_ones(999))
 
-### 3.-Pythagorean Triplet
+### 3.-Pythagorean Triplet ###
 # Create a function that validates whether three given integers form a Pythagorean
 # triplet. The sum of the squares of the two smallest integers must equal the
 # square of the largest number to be validated.
@@ -40,7 +40,7 @@ def is_triplet(*n): #observa que usa *args, bibliografia= https://www.programiz.
     return a*a + b*b == c*c
 # FUENTE: https://edabit.com/challenge/Ns4Sjh7KK58ofAph8
 
-### 4.-Flatten the Curve
+### 4.-Flatten the Curve ###
 # Given a list of integers, replace every number with the mean of all numbers.
 
 def flatten_the_curve(lst = []):
@@ -66,7 +66,7 @@ import math
 line_length = lambda x,y: round(math.sqrt((y[0]-x[0])**2+ (y[1]-x[1])**2),2)
 # print(line_length([15, 7], [22, 11]))
 
-### 6.- Sum of Evenly Divisible Numbers from a Range
+### 6.- Sum of Evenly Divisible Numbers from a Range ###
 # Create a function that takes three arguments a, b, c and returns the
 # sum of the numbers that are evenly divided by c from the range a, b inclusive.
 def evenly_divisible(a,b,c):
@@ -83,7 +83,7 @@ def evenly_divisible(a,b,c):
 # print(evenly_divisible(1, 10, 2))
 # print(evenly_divisible(1, 10, 3))
 
-### 7.-Find the Discount
+### 7.-Find the Discount ###
 # Create a function that takes two arguments: the original price and the
 # discount percentage as integers and returns the final price after the discount.
 # def dis(price, discount):
@@ -93,7 +93,7 @@ dis = lambda price, discount: round(price - ((discount/100)*price),2)
 # print(dis(89, 20))
 # print(dis(100, 75))
 
-### 8.-Circle or Square
+### 8.-Circle or Square ###
 # Given the radius of a circle and the area of a square, return True if
 # the circumference of the circle is greater than the square's perimeter and
 # False if the square's perimeter is greater than the circumference of the circle
@@ -104,11 +104,22 @@ circle_or_square = lambda rad, area: True if 2*3.14*rad > (area**0.5) * 4 else F
 # print(circle_or_square(5, 100) )
 # print(circle_or_square(8, 144))
 
-### 9.-Basic Calculator
+### 9.-Basic Calculator ###
 # Create a function that takes two numbers and a mathematical operator + - / * 
 # and will perform a calculation with the given numbers.
 calculator = lambda num1, operator, num2: "Can't divide by 0!" if num2 == 0 else eval('num1' + operator + 'num2') 
 # FUENTE:https://edabit.com/challenge/ZdnwC3PsXPQTdTiKf
 # print(calculator(2, '/', 2)) 
 
+# Probabilities (Part 1)
+
+### 10.-Probabilities (Part 1) ###
+# Given a list of numbers and a value n, write a function that returns the probability
+# of choosing a number greater than or equal to n from the list. The probability should
+# be expressed as a percentage, rounded to one decimal place.
+# FUENTE: https://edabit.com/challenge/LMjficQtWW36a3by3
+probability = lambda lst, n : round((len([i for i in lst if i>= n])/ len(lst))*100,1)
+# print(probability([5, 1, 8, 9], 6))
+# print(probability([7, 4, 17, 14, 12, 3], 16))
+# print(probability([4, 6, 2, 9, 15, 18, 8, 2, 10, 8], 6))
 
