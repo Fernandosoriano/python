@@ -13,3 +13,17 @@ def total_overs(balls):
 # print(total_overs(945))
 # print(total_overs(5))
 
+### 2.-Harshad Numbers
+# A number n is a Harshad (also called Niven) number if it is divisible by 
+# the sum of its digits. For example, 666 is divisible by 6 + 6 + 6, so it is
+# a Harshad number.
+# Write a function to determine whether the given number is a Harshad number.
+def is_harshad(num):
+    sNum = str (num)
+    suma = 0
+    for i in sNum:
+        suma += int(i)
+    return True if num % suma == 0 else False
+# FUENTE: https://edabit.com/challenge/ZDDyfBFBWMotQSYin
+# print(is_harshad(23) )  
+

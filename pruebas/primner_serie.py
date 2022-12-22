@@ -316,6 +316,42 @@ for doc_sellado in lista_docs_sellados:
         for id_cliente in lista_id_clients:
                 lista_content.append(doc_sellado)
 
-print(lista_docs_sellados)
-print(lista_content)
+# print(lista_docs_sellados)
+# print(lista_content)
+
+
+print('hola ')
                 
+# def suma (n):
+#         suma = 0
+#         for i in n:
+#                 suma = suma + int(i)
+#         return str(suma)
+#         if len (suma) > 2: 
+#                 pass
+
+# print(suma ('16'))
+
+# def suma(n):
+# #     x = str(n)
+#     s = 0
+#     while len(n) > 1:
+#         s = 0
+#         for i in range(len(n)):
+#             s = s + int(n[i])  
+#             x = str(s)   
+#     return x
+
+# print(suma ('132189'))               
+
+
+
+def sum(n):
+    while len(n) > 1:
+        suma = 0
+        for i in range(len(n)):
+            suma = suma + int(n[i])
+        n = str(suma)
+    return suma
+
+print(sum('942'))               
