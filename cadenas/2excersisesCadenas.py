@@ -60,3 +60,20 @@ double_char = lambda txt: ''.join([l*2 for l in txt])
 # print(double_char("Hello World!")) 
 # print(double_char("1234!_ "))
 
+
+#6.-Burglary Series (03): Is It Gone?
+# Your spouse is not concerned with the loss of material possessions but rather
+# with his/her favorite pet. Is it gone?! Given a dictionary of the stolen 
+# items and a string in lowercase representing the name of the pet (e.g. "rambo"),
+# return:
+# "Rambo is gone..." if the name is on the list.
+# "Rambo is here!" if the name is not on the list.
+# Note that the first letter of the name in the return statement is capitalized.
+find_it = lambda items, name : f'{name.capitalize()} is gone...' if name in items else f'{name.capitalize()} is here!'
+# FUENTE: https://edabit.com/challenge/2wQPKcSipXmK4idwD
+
+# print(find_it({
+#   "tv": 30,
+#   "stereo": 50,
+# 	"julius": 100,											 
+# }, "julius"))
