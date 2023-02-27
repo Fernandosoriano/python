@@ -320,7 +320,7 @@ for doc_sellado in lista_docs_sellados:
 # print(lista_content)
 
 
-print('hola ')
+# print('hola ')
                 
 # def suma (n):
 #         suma = 0
@@ -354,4 +354,79 @@ def sum(n):
         n = str(suma)
     return suma
 
-print(sum('942'))               
+# print(sum('942'))               
+
+
+
+# policy={"nombre": "Fernando"}
+# policy = {}
+
+# if policy:
+#         print ('policy exist')
+
+# data = ['Fernando',2,3,4,5,6]
+# def genValues(data):
+#     txt =''
+#     for index in range(len(data)):
+#         a= ''
+#         if data[index]:
+#             a = "'{}'".format(data[index])
+#         else:
+#             a = "NULL"
+#         txt += a
+#         if len(data)-1 != index:
+#             txt += ", "
+#     return txt
+# print(genValues(data),  type(genValues(data)))
+
+regreso = {}
+regreso = [1,2,3,4,5]
+# print(regreso)
+
+mimetypes_accepted = {
+            "pdf": "application/pdf",
+            "png": "image/png",
+            "docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "doc": "application/msword",
+            "zip": "application/zip",
+            "xml": "application/xml",
+            "xls": "application/vnd.ms-excel"
+        }
+# for mimetype in mimetypes_accepted:
+#         print(mimetype)
+
+# url = 'https://compartamos.sharepoint.com/sites/EquipoAterna/Documentos%20compartidos/Forms/AllItems.aspx?e=5%3A2027e4e72097452196ed33d3ab02311c&at=9&FolderCTID=0x012000DC02C43DC983B14686EB64F38CA3138F&id=%2Fsites%2FEquipoAterna%2FDocumentos%20compartidos%2FGeneral%2FDocumentaci%C3%B3n%20AS%20IS%2FDiagramas%20de%20secuencia%20AS%20IS%2FSiniestros&viewid=2718e5fa-0023-47e3-bc82-2dcaf54ce5eb'
+
+# if 'FolderCTID' in url :
+#         print ('viene')
+jsonR = {'id': '12', 'nombre':' Fernando '}
+nombre =  jsonR['id']  + '_' + jsonR['nombre']
+nombre = nombre.replace(' ','_')
+# print (nombre)
+
+import jwt
+from cryptography.hazmat.primitives import serialization
+
+# encriptado con hs256 sha256:
+
+# encoded_jwt = jwt.encode({"some": "payload"}, "secret", algorithm="HS256")
+# print(encoded_jwt)
+# jwt.decode(encoded_jwt, "secret", algorithms=["HS256"])
+payload_data = {"name": "Fernando Valle", "username":"FValle"}
+
+token = jwt.encode(payload=payload_data, key = "secret", algorithm="HS256")
+# print('token:',token)
+
+decode = jwt.decode(token, "secret", algorithms=["HS256"])
+# print('decode:', decode)
+
+header = jwt.get_unverified_header(token)
+# print('header:',header)
+# ================================================================================
+# RSA:
+private_key = b"-----BEGIN PRIVATE KEY-----\nMIGEAgEAMBAGByqGSM49AgEGBS..."
+public_key = b"-----BEGIN PUBLIC KEY-----\nMHYwEAYHKoZIzj0CAQYFK4EEAC..."
+encoded = jwt.encode({"some": "payload"}, private_key, algorithm="RS256")
+print(encoded)
+
+# comentario agregado para probar la creacion de la rama prueba
