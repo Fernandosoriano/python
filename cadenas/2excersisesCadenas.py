@@ -77,3 +77,21 @@ find_it = lambda items, name : f'{name.capitalize()} is gone...' if name in item
 #   "stereo": 50,
 # 	"julius": 100,											 
 # }, "julius"))
+
+#8.-CMS Selector Based on a Given String
+# Write a function that takes a list of strings and a pattern (string) and returns 
+# the strings that contain the pattern in alphabetical order. If the pattern is an 
+# empty string, return all the strings passed in the input list.
+
+def cms_selector(lst, txt):
+    # lw = [w.lower() for w in lst]
+    return sorted([w for w in lst if txt in w ])
+
+# print(cms_selector(["WordPress", "Joomla", "Drupal"], "w"))
+# print(cms_selector(["WordPress", "Joomla", "Drupal", "Magento", "Shopify", "Blogger"], "er"))
+# print(cms_selector(["WordPress", "Joomla", "Drupal", "Magento", "Shopify", "Blogger"], "o"))
+# print(cms_selector(["WordPress", "Joomla", "Drupal", "Magento", "Shopify", "Blogger"], ""))
+# print(cms_selector(["WordPress", "Joomla", "Drupal", "Magento", "Shopify", "Blogger"], "JO"))
+
+
+

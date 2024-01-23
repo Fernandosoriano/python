@@ -40,3 +40,28 @@ add_indexes = lambda lst: [value + index for index, value in enumerate(lst)]
 # FUENTE: https://edabit.com/challenge/7sdNcax4GsLSrNQbM
 first, *middle, last = [1, 2, 3, 4, 5, 6]
 # print(first, middle, last)
+
+# 6.-Inclusive List Ranges
+# Write a function that, given the start start_num and end end_num values,
+# return a list containing all the numbers inclusive to that range. 
+inclusive_list = lambda n1,n2:[i for i in range(n1,n2+1)] if n1<n2 else n1
+# print(inclusive_list(1, 5))
+# print(inclusive_list(2, 8))
+# print(inclusive_list(10, 20))
+# print(inclusive_list(17, 5))
+# FUENTE:https://edabit.com/challenge/bHTb8p5nybCrjFPze
+
+def ordenAsc (lst):
+    l = []
+    min = lst[len(lst)-1]
+    for el in lst:      
+        if min<el:
+            l.append(min)
+        else:
+            min = el  
+            l.append(min)
+ 
+    return(l)  
+
+print(ordenAsc([1,4,3,2,5]))
+
