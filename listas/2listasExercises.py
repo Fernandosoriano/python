@@ -51,6 +51,7 @@ inclusive_list = lambda n1,n2:[i for i in range(n1,n2+1)] if n1<n2 else n1
 # print(inclusive_list(17, 5))
 # FUENTE:https://edabit.com/challenge/bHTb8p5nybCrjFPze
 
+# 7.- Example
 def ordenAsc (lst):
     l = []
     min = lst[len(lst)-1]
@@ -60,8 +61,64 @@ def ordenAsc (lst):
         else:
             min = el  
             l.append(min)
- 
     return(l)  
 
-print(ordenAsc([1,4,3,2,5]))
+# print(ordenAsc([1,4,3,2,5]))
+
+# 8.-Let's Sort This List!
+# Resource = https://edabit.com/challenge/NM8JbG5K2ajKjkqpj
+# Create a function that takes a list of numbers lst, a string s and return
+# a list of numbers as per the following rules:
+# "Asc" returns a sorted list in ascending order.
+# "Des" returns a sorted list in descending order.
+# "None" returns a list without any modification.
+
+def asc_des_none(lst:list, s:str) ->list:
+    """Function that orders a list of numbers
+    in ascending or descending order, acording
+    with the text that is received as a second
+    partamter 
+
+    Args:
+        lst (list): list to be ordered
+        s (str): text that defines if the list is goin to be
+        ordered in ascending or descending way
+
+    Returns:
+        list: list oredered
+    """
+    if s == 'Asc':
+        lst = sorted(lst)
+    elif s == 'Des':
+        lst = sorted(lst, reverse=True)
+    return lst
+
+# print(asc_des_none([4, 3, 2, 1], "Asc" ))
+# print(asc_des_none([7, 8, 11, 66], "Des"))
+# print(asc_des_none([1, 2, 3, 4], "None"))
+# print(asc_des_none([1, 0, 1, 0], "Asc"))
+# print(asc_des_none([1, 2, 2, 2, 2, 2, 2], "Des"))
+# print(asc_des_none([9, 7, 43, 11, 16, 111, 19], "Asc"))
+
+# Extra code that surged from the example number 8
+# here i leraned the concept of namedtuple, that it's like
+# a type of a class, but more simple:
+from collections import namedtuple
+
+Runner = namedtuple('Runner', 'bibnumber duration')
+runners = []
+runners.append(Runner('2528567', 1500))
+runners.append(Runner('7575234', 1420))
+runners.append(Runner('2666234', 1600))
+# print(Runner('2528567', 1500))
+# print(':::::runners:', runners)
+
+# Now i'm going to experiment with the concept of
+# slices in lists, also as a consequence of the
+# documentation that i  saw in example number 8:
+
+list_example = [1,2,3,4,5,6,7,8,9,10]
+# print(list_example[-1:-10:-2])
+
+
 
