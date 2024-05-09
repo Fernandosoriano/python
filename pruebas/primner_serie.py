@@ -527,4 +527,57 @@ x,y = zip(*zipobj)
 # print(y)
 
 
-print('Hola mundo')
+# print('Hola mundo')
+
+
+def is_palindromo (s:str)-> bool:
+    return True if s[::-1] == s else False
+
+# print(is_palindromo('alagordadrogala'))
+
+# ===============================================================
+
+class Animal:
+    def __init__(self, especie, edad):
+        self.especie = especie
+        self.edad = edad
+
+    # Método genérico pero con implementación particular
+    def hablar(self):
+        # Método vacío
+        pass
+
+    # Método genérico pero con implementación particular
+    def moverse(self):
+        # Método vacío
+        pass
+
+    # Método genérico con la misma implementación
+    def describeme(self):
+        print("Soy un Animal del tipo", type(self).__name__)
+        
+# Perro hereda de Animal
+class Perro(Animal):
+    pass
+
+mi_perro = Perro('mamífero', 10)
+# mi_perro.describeme()
+# Soy un Animal del tipo Perro
+
+
+# import string
+# alphabet = list(string.ascii_lowercase)
+# print(alphabet)
+
+def StringChallenge(texto):
+    import string
+    alphabet = list(string.ascii_lowercase)
+    l = []
+    str_low = texto.lower()
+    for i in str_low:
+        if i in alphabet:
+            l.append(str(alphabet.index(i) + 1))
+        else:
+            l.append(i)
+    return ''.join(l)
+print(StringChallenge('FER-31'))

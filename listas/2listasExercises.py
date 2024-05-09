@@ -120,5 +120,27 @@ runners.append(Runner('2666234', 1600))
 list_example = [1,2,3,4,5,6,7,8,9,10]
 # print(list_example[-1:-10:-2])
 
+# 9.-Date Format
+# Create a function that converts a date formatted as MM/DD/YYYY
+# to YYYYDDMM
+def format_date(date:str) -> str:
+    """function that receives a date as 
+    a string in the format MM/DD/YYYY, and returns 
+    the date as a string in the format:  YYYYDDMM.
+
+    Args:
+        date (_type_): date as a string in the format MM/DD/YYYY
+    """
+    # convert a string to a list:
+    a = date.rsplit("/")
+    #revert the order of the list
+    a.reverse()
+    #join without space the elements of the list
+    return "".join(a)
+    
+print(format_date("11/12/2019"))
+# format_date("12/31/2019")
+# format_date("01/15/2019")
+
 
 

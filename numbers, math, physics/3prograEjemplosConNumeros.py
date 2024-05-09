@@ -96,11 +96,7 @@ def square_areas_difference (r:int) -> int|str :
 f = lambda  r: 4*r**2 - 2*r**2 if r > 0 else 'Please enter a positive radius'
 # print(f(5))
 
-### 8.- 
-# import math
-# print (int(math.log(1024, 2)))
-
-
+### 8.- Solving Exponential Equations With Logarithms
 
 def solve_for_exp(b:int, n:int) -> int:
     """Function that resolves a logaritm
@@ -121,5 +117,80 @@ def solve_for_exp(b:int, n:int) -> int:
     return len(l)+1
         
 # print(solve_for_exp(10, 100000000))
+
+
+### 9.-Same Parity?
+# Create a function that takes a number as input and returns True if the sum of its
+# digits has the same parity as the entire number. Otherwise, return False.
+# Link = https://edabit.com/challenge/jzCGNwLpmrHQKmtyJ
+def parity_analysis(num: int) -> bool: 
+    """Function that receives a number and determines if
+    the sum of their digits the same parity (even or odd)
+    of the orginal number
+    
+    Args:
+        num (int): number to analyze
+
+    Returns:
+        bool: True if are the same parity, false in the contrary case
+    """
+    list_of_numbers = [int(i) for i in str(num)]
+    sum_of_numbers = sum(list_of_numbers)
+    return True if num % 2 == sum_of_numbers % 2 else False
+# print(parity_analysis(133331))
+
+
+### 9.-Folding a Piece of Paper
+# Create a function that returns the thickness (in meters) of a piece of paper after
+# folding it n number of times. The paper starts off with a thickness of 0.5mm.
+# fountain: https://edabit.com/challenge/4t6YAJS8dtT7RQjta
+def num_layers(n:int) -> float:
+    """function that receives the parameter n (the number of times
+    that a piece of papaer is going to be folding),
+    and returns the thickness of the paper after being folding
+    n times in meters
+
+    Args:
+        n (int): the number of times
+    that a piece of papaer of thickness 0.5mm is going to be 
+    folding
+
+    Returns:
+        m_thickness: the thickness of the paper after being folding
+    n times in meters
+    """
+    number_of_layers = 2**n
+    m_thickness = number_of_layers*0.5*0.0010000
+    # m_thickness  = mm_thickness*0.0010000
+    return m_thickness
+
+# print(num_layers(40))    
+# one interesting link related with this problem:
+# https://gizmodo.com/if-you-fold-a-paper-in-half-103-times-it-will-be-as-thi-1607632639
+
+
+# 10.-Get the Area of a Country
+# Create a function that takes a country's name and its area as arguments and 
+# returns the area of the country's proportion of the total world's landmass.
+
+def area_of_country(name:str, area:int) -> str:
+    """Function that receives the area of ​​a country as one of their 
+    parameters and calculates its percentage with respect to the 
+    land mass of the world.
+
+    Args:
+        name (str): name of the country
+        area (float): area of the country
+
+    Returns:
+        a text that includes the percentage
+    """
+    total_worlds_landmass = 148940000
+    percentage_for_country = (area/total_worlds_landmass)*100
+    return f"{name} is {round(percentage_for_country,2)}% of the total world's landmass"
+
+# print(area_of_country("Russia", 17098242))
+# print(area_of_country("USA", 9372610))
+# print(area_of_country("Iran", 1648195))
 
 

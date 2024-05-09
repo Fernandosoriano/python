@@ -34,3 +34,36 @@ get_frequencies = lambda l: {i: l.count(i) for i in l}
 # print(get_frequencies([]))
 
 # Fuente:https://edabit.com/challenge/KKmM4ob5wwPwf8kgS
+
+#3.-Calculate the Profit
+# You work for a manufacturer, and have been asked to calculate the total profit made
+# on the sales of a product. You are given a dictionary containing the cost price
+# per unit (in dollars), sell price per unit (in dollars), and the starting inventory.
+# Return the total profit made, rounded to the nearest dollar.
+
+def profit(info:dict)  -> int:
+    """Function that receives a dictionary
+    with info of costs and sells of a determinated inventory
+    and returns the total profit
+
+    Args:
+        info (dict): dictionary with three keys:cost_price, sell_price
+        and inventory
+    Returns:
+        int: tht total profit
+    """
+    profit = info['sell_price']*info['inventory'] - info['cost_price']* info['inventory']
+    return round(profit)  
+# print(profit({
+#   "cost_price": 2.77,
+#   "sell_price": 7.95,
+#   "inventory": 8500
+# }))
+
+# 3.-Get Students with Names and Top Notes
+# def top_note(student:dict) -> dict:
+#     return {'name': student['name'], 'top_note':max(student['notes'])}
+top_note = lambda student: {'name':student['name'],'top_note':max(student['notes'])}  
+# print(top_note({ "name": "John", "notes": [3, 5, 4] }))
+# print(top_note({ "name": "Max", "notes": [1, 4, 6] }))
+# print(top_note({ "name": "Zygmund", "notes": [1, 2, 3] }))
