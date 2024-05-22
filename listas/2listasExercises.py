@@ -138,9 +138,23 @@ def format_date(date:str) -> str:
     #join without space the elements of the list
     return "".join(a)
     
-print(format_date("11/12/2019"))
+# print(format_date("11/12/2019"))
 # format_date("12/31/2019")
 # format_date("01/15/2019")
 
 
+#10.-Designing Rugs
+# Write a function that accepts the height and width (m, n) and
+# an optional proc s and generates a list with m elements.
+# Each element is a string consisting of either:
+# The default character (hash #) repeating n times (if no proc is given).
+# The character passed in through the proc repeating n times.
+# LINK = https://edabit.com/challenge/xR248CxGSsSrNK5Za
 
+make_rug = lambda h, p, w='#': [p*w for i in range(h)]
+
+# print(make_rug(3, 5, '#'))
+# print(make_rug(3, 5, '$'))
+# print(make_rug(2, 2, 'A'))
+# print(make_rug(2, 1, 'bcb'))
+# print(make_rug(3, 1, 'b'))

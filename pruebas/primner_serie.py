@@ -580,4 +580,4 @@ def StringChallenge(texto):
         else:
             l.append(i)
     return ''.join(l)
-print(StringChallenge('FER-31'))
+# print(StringChallenge('FER-31'))

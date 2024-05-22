@@ -62,3 +62,55 @@ quadratic_equation = lambda a,b,c: int((-b+(b**2-4*a*c)**0.5)/2*a)
 # print(quadratic_equation(1, 2, -3))
 # quadratic_equation(2, -7, 3)
 # quadratic_equation(1, -12, -28)
+
+#5.-Hex to Binary
+# Create a function that will take a HEX number and returns the binary
+# equivalent (as a string).
+# LINK = https://edabit.com/challenge/BuCaGYh8keiWJGmcC
+to_binary = lambda num: "{0:08b}".format(int(num, 16))
+
+# print(type(to_binary('0xFF')))
+# print(to_binary('0xAA'))
+# print(to_binary('0xFA'))
+
+
+#6.-The Snake — Area Filling
+# This challenge is based on the classic videogame "Snake".
+# Assume the game screen is an n * n square, and the snake 
+# starts the game with length 1 (i.e. just the head) positioned
+# on the top left corner.
+
+# In this version of the game, the length of the snake doubles
+# each time it eats food (e.g. if the length is 4, after eating it becomes 8).
+
+# Create a function that takes the side n of the game screen
+# and returns the number of times the snake can eat before it
+# runs out of space in the game screen.
+
+def snakefill(n:int) -> int:
+    """function that receives a nummber n,
+    that indicates the size of a grid of nxn, and
+    returns a number n, that indicates number of times
+    the snake can eat before it runs out of space in
+    the grid.
+
+    Args:
+        n (_type_): number that indicates the size of a grid
+
+    Returns:
+        _type_:number of times
+    the snake can eat before it runs out of space
+    """
+    area = n**2   
+    for i in range (n):
+        dif = area-(2**(i+1))
+        # print('dif = ', dif, 'i+1=',i+1)
+        if dif >= 0:
+            number_of_times = i+1
+        if dif < 0:  
+            number_of_times = i+1-1      
+            break
+    return number_of_times 
+
+print(snakefill(900))
+

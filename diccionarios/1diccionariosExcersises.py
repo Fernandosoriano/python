@@ -67,3 +67,13 @@ top_note = lambda student: {'name':student['name'],'top_note':max(student['notes
 # print(top_note({ "name": "John", "notes": [3, 5, 4] }))
 # print(top_note({ "name": "Max", "notes": [1, 4, 6] }))
 # print(top_note({ "name": "Zygmund", "notes": [1, 2, 3] }))
+
+# 4.-Invert Keys and Values
+# Write a function that inverts the keys and values of a dictionary.
+# LINK:https://edabit.com/challenge/Axim3Ld5zu9RFLZKr
+
+invert = lambda dct: {v:k for (k,v) in dct.items()} 
+# TESTS:
+# print(invert({ "z": "q", "w": "f" }))
+# print(invert({ "a": 1, "b": 2, "c": 3 }))
+# print(invert({ "zebra": "koala", "horse": "camel" }))
