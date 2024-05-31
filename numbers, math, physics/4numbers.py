@@ -112,5 +112,45 @@ def snakefill(n:int) -> int:
             break
     return number_of_times 
 
-print(snakefill(900))
+# print(snakefill(900))
+
+
+# 7.-Simple Row Sum
+# Imagine this triangle:
+# Create a function that takes a number n and
+# returns the sum of all numbers in nth row.
+
+# LINK = https://edabit.com/challenge/ysgbRFTPujx8v37yF
+
+#     1
+#    2 3
+#   4 5 6
+#  7 8 9 10
+# ...
+
+def row_sum(n:int) -> int: 
+    """Function that receives a number, and returns the
+    sum of the numbers that are in the level with this
+    number in a pyramid like this:
+     1
+    2 3
+   4 5 6
+  7 8 9 10
+
+    Args:
+        n (int): number of the row to calculate the
+        sum
+
+    Returns:
+        int: the sum of the indicated row in the
+        imaginary pyramid
+    """
+    l:list = [i for i in range(1,n+1)]
+    l_2:list = [num for num in range (1,sum(l)+1)]
+    return sum(l_2[len(l_2)-n::])
+
+# print(row_sum(1000))
+
+
+
 

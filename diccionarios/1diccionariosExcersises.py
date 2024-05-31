@@ -77,3 +77,36 @@ invert = lambda dct: {v:k for (k,v) in dct.items()}
 # print(invert({ "z": "q", "w": "f" }))
 # print(invert({ "a": 1, "b": 2, "c": 3 }))
 # print(invert({ "zebra": "koala", "horse": "camel" }))
+
+# 5.-encode_morse
+# create a function that takes a string as an argument and 
+# returns the Morse code equivalent.
+def encode_morse(message:str) -> str:
+    """function that receives a string, and
+    translate this to morse code
+
+    Args:
+        message (str): text to be translated
+
+    Returns:
+        str: text translated to morse code
+    """
+    char_to_dots:dict = {
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..', ' ': ' ', '0': '-----',
+    '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+    '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+    '&': '.-...', "'": '.----.', '@': '.--.-.', ')': '-.--.-', '(': '-.--.',
+    ':': '---...', ',': '--..--', '=': '-...-', '!': '-.-.--', '.': '.-.-.-',
+    '-': '-....-', '+': '.-.-.', '"': '.-..-.', '?': '..--..', '/': '-..-.'
+    }
+    message_w_o_s_u:str = message.replace(' ', '').upper()
+    list_of_simbols:list = [simbol for simbol in message_w_o_s_u]
+    list_of_morse:list = [char_to_dots[simbol] for simbol in list_of_simbols]
+    res:str = ''.join(list_of_morse)
+    return res
+
+# print(encode_morse("sos"))

@@ -30,8 +30,39 @@ def interview(lst:list, tot:int) -> str:
     else:
         return 'disqualified'
 
-print(interview([5, 5, 10, 10, 15, 15, 20, 20], 120))
-print(interview([2, 3, 8, 6, 5, 12, 10, 18], 64))
-print(interview([5, 5, 10, 10, 25, 15, 20, 20], 120))
-print(interview([5, 5, 10, 10, 15, 15, 20], 120))
-print(interview([5, 5, 10, 10, 15, 15, 20, 20], 130))
+# print(interview([5, 5, 10, 10, 15, 15, 20, 20], 120))
+# print(interview([2, 3, 8, 6, 5, 12, 10, 18], 64))
+# print(interview([5, 5, 10, 10, 25, 15, 20, 20], 120))
+# print(interview([5, 5, 10, 10, 15, 15, 20], 120))
+# print(interview([5, 5, 10, 10, 15, 15, 20, 20], 130))
+
+
+#Disarium Number
+# A number is said to be Disarium if the sum of its digits raised
+# to their respective positions is the number itself.
+
+# Create a function that determines whether a number is a Disarium or not. 
+# LINK = https://edabit.com/challenge/yvJbdkmKHvCNtcZy9
+
+def is_disarium(n:int) -> bool:
+    """Function that receives a number, and
+    returns True if the number is a Disarium, in other case
+    returns False
+
+    Args:
+        n (int): Number to check if is disarium
+
+    Returns:
+        bool: True if the number is disarium, False if not
+    """
+    list_of_nums:list = [int(num) for num in str(n)]
+    return True if sum([i**(list_of_nums.index(i)+1) for i in list_of_nums]) == n \
+    else False
+
+# print(is_disarium(75))
+# print(is_disarium(135))
+# print(is_disarium(544))
+# print(is_disarium(518))
+# print(is_disarium(466))
+# print(is_disarium(8))
+    
