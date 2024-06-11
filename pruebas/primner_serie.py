@@ -581,3 +581,7 @@ def StringChallenge(texto):
             l.append(i)
     return ''.join(l)
 # print(StringChallenge('FER-31'))
+
+# print(bin(4))
+binary = '11111111111111111111111111111011'
+# print(int(binary,2))
