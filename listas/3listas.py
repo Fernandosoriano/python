@@ -114,5 +114,126 @@ def flipping_bits(n:int) -> int:
     l:list = ['1' if n=='0' else '0' for n in binary_filled]
     not_bin:int = int(''.join(l),2)
     return not_bin
-
 # print(flipping_bits(4))
+
+
+# 5.-Tallest Skyscraper
+# A city skyline can be represented as a 2-D list with 1s representing
+# buildings. In the example below, the height of the tallest building
+# is 4 (second-most right column).
+# [[0, 0, 0, 0, 0, 0],
+# [0, 0, 0, 0, 1, 0],
+# [0, 0, 1, 0, 1, 0],
+# [0, 1, 1, 1, 1, 0],
+# [1, 1, 1, 1, 1, 1]]
+# Create a function that takes a skyline (2-D list of 0's and 1's)
+# and returns the height of the tallest skyscraper.
+# Link = https://edabit.com/challenge/76ibd8jZxvhAwDskb
+
+def tallest_skyscraper(lst:list) -> int:
+    """function that receives a lis of lists (matrix)
+    and returns the max number resulted from the 
+    sum of the n'th coolumn of the matrix
+
+    Args:
+        lst (list): list of lists
+
+    Returns:
+        int: max number, result of the sum of the n'th
+        column of the list of lists (matrix)
+    """
+    suma:list = [sum(x) for x in zip(*lst)]
+    return max(suma)
+# TESTS:
+# print(tallest_skyscraper([
+# [0, 0, 0, 0],
+# [0, 1, 0, 0],
+# [0, 1, 1, 0],
+# [1, 1, 1, 1]
+# ]))
+# print(tallest_skyscraper([
+#   [0, 1, 0, 0],
+#   [0, 1, 0, 0],
+#   [0, 1, 1, 0],
+#   [1, 1, 1, 1]
+# ]))
+# print(tallest_skyscraper([
+#   [0, 0, 0, 0],
+#   [0, 0, 0, 0],
+#   [1, 1, 1, 0],
+#   [1, 1, 1, 1]
+# ]))
+
+
+# 6.-Convert to Hex
+# Create a function that takes a string's characters as ASCII
+# and returns each character's hexadecimal value as a string.
+# Link = https://edabit.com/challenge/g6yjSfTpDkX2STnSX
+
+def convert_to_hex(txt:str) -> str:
+    """Function that receives a string, then
+    this string is converted to a list, in which each
+    element is the equivalent of the letter of the original
+    string to ASCII, and finally each element of this list is 
+    converted to their equivalent in a hexadecimal system,
+    returning it as a string
+
+    Args:
+        txt (str): string to be converted to a string of a 
+        hexadecimal
+
+    Returns:
+        str: string with hexadecimal elements
+    """
+    l:list = [hex(ord(letter))[2::] for letter in txt]
+    res = ' '.join(l)
+    return res
+
+# Notes:
+#1.- ord receives a letter or symbol and returns their equivalent
+# ValueErrorin ascii code
+
+#2.- hex receives a decimal number, and returns thier equivalent
+# in a hexadecimal system
+
+# TESTS:
+# print(convert_to_hex("hello world"))
+# print(convert_to_hex("Big Boi"))
+# print(convert_to_hex("Marty Poppinson"))
+
+
+# 7.-Majority Vote
+# Create a function that returns the majority vote in a list. A majority vote
+# is an element thatoccurs > N/2 times in a list (where N is the length of the list).
+# Link: https://edabit.com/challenge/pQavNkBbdmvSMmx5x
+def majority_vote(lst:list) -> str | None:
+    """Function that receives a list of letters,
+    and returns the letter that appears more than
+    the length of the list divided by two
+
+    Args:
+        lst (list): list with lettters to be analized
+
+    Returns:
+        _type_: the letter that appears more than the 
+        length of the list divided by teo or None if 
+        this doesn´t happen
+    """
+    lim:int = len(lst)/2
+    counter_ls:list = [el if lst.count(el) > lim else 0 for el in lst]
+    majority_vote_ls:list = list(filter(lambda x: x != 0,\
+                                list(dict.fromkeys(counter_ls))))
+    return majority_vote_ls[0] if len(majority_vote_ls) > 0 else None
+# Tests:
+# print(majority_vote(["A", "B", "B", "B", "A", "A"]))
+# print(majority_vote(["B", "B", "B"]))
+# print(majority_vote(["A", "B", "B"]))
+# print(majority_vote(["A", "A", "B"]))
+# print(majority_vote(["A", "A", "A", "B", "C", "A"]))
+# print(majority_vote(["B", "A", "B", "B", "C", "A", "B", "B"]))
+# print(majority_vote(["A", "B", "B", "A", "C", "C"]))
+# print(majority_vote(["A", "B"]))
+# print(majority_vote(["A"]))
+# print(majority_vote([]))
+
+
