@@ -605,7 +605,7 @@
 # mat_califs      = [5,8,5,8,5,7,6,6,5,8]
 # fis_califs      = [9,8,5,6,5,7,6,6,5,8]
 
-# list_of_lists = [biologia_califs, mat_califs, fis_califs]
+# list_of_lists = [biologia_califs, math_califs, phys_califs]
 # list_of_tuples = list(zip(*list_of_lists))
 # list_of_averages = [round(sum(t)/len(t),1) for t in list_of_tuples]
 # print(list_of_averages)
@@ -817,11 +817,120 @@ class Store:
     def stock_price(self):
         # Add together all item prices in self.items and return the total.
         return f'the total stock_price in {self.name} is:\
- {sum([item['price'] for item in self.items])}'
+{sum([item['price'] for item in self.items])}'
 sears = Store('sears')
 sears.add_item('switch',50)
 sears.add_item('switch2',500)
 # print(sears.stock_price())
+
+
+
+# ====================================================================
+class Store:
+    def __init__(self, name):
+        self.name = name
+        self.items = []
+        
+    def __repr__(self) -> str:
+        return self.name
+    
+    def add_item(self, name, price):
+        self.items.append({
+            'name': name,
+            'price': price
+        })
+
+    def stock_price(self):
+        total:int = sum([item['price'] for item in self.items])
+        # total = 0
+        # for item in self.items:
+        #     total += item['price']
+        return total
+
+    @classmethod
+    def franchise(cls, store):
+        return cls(f'{store.name} - franchise')
+        # Return another store, with the same name as the argument's name, plus " - franchise"
+
+    @staticmethod
+    def store_details(store):
+        return f'{store.name}, total stock proce: {store.stock_price()}'
+        # Return a string representing the argument
+        # It should be in the format 'NAME, total stock price: TOTAL'
+
+store = Store("Test")
+store2 = Store("Amazon")
+store2.add_item("Keyboard", 160)
+
+# print(Store.franchise(store))  # returns a Store with name "Test - franchise"
+# print(Store.franchise(store2))  # returns a Store with name "Amazon - franchise"
+
+# print(Store.store_details(store))  # returns "Test, total stock price: 0"
+# print(Store.store_details(store2))  # returns "Amazon, total stock price: 160"
+
+
+
+# import re
+# lst = ["bad cookie", "good cookie", "bad cookie", "good cookie", "good cookie", 'bad cookie']
+# pattern = "bad"
+
+
+# print(len(re.findall(pattern, ", ".join(lst))))
+# print(", ".join(lst))
+
+
+from typing import List
+def average_calc (ls:List[int]) -> float:
+    avg:float = sum(ls)/len(ls)
+    return avg
+
+# print(average([4,8,6]))
+# alumns:List[str]      = ['Fer', 'Adri', 'Vale']
+# bio_grades:List[int]  = [6,8,9]
+# math_grades:List[int] = [5,7,9]
+
+# list_of_tup = zip(alumns, bio_grades, math_grades)
+# print(list(list_of_tup))
+
+class Student:
+    def __init__(self, name:str, age:int, group:int):
+        self.name  = name
+        self.age   = age
+        self.group = group
+    
+    def return_asigned_group (self):
+        return f'{self.name} has {self.age} years old and was asigned to the group {self.group}'
+    
+
+student_one = Student('Fernando', 15, 402)
+
+# print(student_one.return_asigned_group())
+
+
+list_of_prods = [{'prod': 'switch', 'price': 30}, {'prod': 'play', 'price': 49}]
+
+# print(sorted(list_of_prods, key = lambda dict: dict['price'], reverse = True))  
+
+
+
+class Schrodinger_cat ():
+    box_state = ['box opened', 'box closed']
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
 
 
 

@@ -11,11 +11,13 @@ def countTrue(array = None):
     for i in array:
         if type(i) != bool:
             return print('sólo se aceptan listas con booleanos')
-    listTrue = list(filter(lambda v:  v == True, array))
+    listTrue = list(filter(lambda v: v == True, array))
 
     print(f'el valor booleano true, aparece {len(listTrue)} veces')
     # print(listTrue)
 # countTrue([True, False, False, True, False])
+
+
 
 #2.- Stuttering Function: Write a function that stutters a word as if someone is struggling to read it.
 #  The first two letters are repeated twice with an ellipsis ... 

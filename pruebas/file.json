@@ -1,0 +1,29 @@
+[
+    {
+        "pod_name": "pod-1",
+        "namespace": "default",
+        "containers": [
+            {
+                "container_name": "container-1",
+                "cpu_usage": "100m",
+                "memory_usage": "200Mi"
+            },
+            {
+                "container_name": "container-2",
+                "cpu_usage": "150m",
+                "memory_usage": "300Mi"
+            }
+        ]
+    },
+    {
+        "pod_name": "pod-2",
+        "namespace": "default",
+        "containers": [
+            {
+                "container_name": "container-1",
+                "cpu_usage": "200m",
+                "memory_usage": "400Mi"
+            }
+        ]
+    }
+]

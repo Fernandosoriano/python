@@ -15,7 +15,7 @@ c,d = (5,11)
 e,f,g = [1,2,3]
 # print(e,f,g)
 
-######## destructuring a chain ###############
+######## destructuring a string ###############
 h,i,j = 'Fer'
 # print(h,i,j)
 

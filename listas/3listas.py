@@ -1,3 +1,4 @@
+from typing import List
 # 1.-Imaginary Coding Interview
 # Create a function to check if a candidate is qualified in an imaginary
 # coding interview of an imaginary tech startup.
@@ -12,9 +13,9 @@
 # The maximum time given for hard questions is 20 minutes each.
 def interview(lst:list, tot:int) -> str:
     """Function that receives a list, in which each element
-    indicate th time that the candidate did for question, and if this
+    indicates the time that the candidate did for question, and if this
     time is the correct and also the total time, the candidate is 
-    cualified, in another case, not
+    qualified, in other case, not
 
     Args:
         lst (_type_): List with the time that the candidate made per question
@@ -235,5 +236,48 @@ def majority_vote(lst:list) -> str | None:
 # print(majority_vote(["A", "B"]))
 # print(majority_vote(["A"]))
 # print(majority_vote([]))
+
+
+
+# 8.-Natural Emptiness
+# In abstract set theory, a construction due to von Neumann represents the natural numbers
+# by sets, as follows:
+
+# 0 = [ ] is the empty set
+# 1 = 0 ∪ [ 0 ] = [ 0 ] = [ [ ] ]
+# 2 = 1 ∪ [ 1 ] = [ 0, 1 ] = [ [ ], [ [ ] ] ]
+# n = n−1 ∪ [ n−1 ] = ...
+# Write a function that receives an integer n and produces the representing set.
+
+# Examples
+# rep_set(0) ➞ []
+
+# rep_set(1) ➞ [[]]
+
+# rep_set(2) ➞ [[], [[]]]
+
+# rep_set(3) ➞ [[], [[]], [[], [[ ]]]]
+
+def rep_set(n:int):
+    l:List = []
+    for i in range (n):
+        l.append(l[:])
+    return l
+
+# print(rep_set(3))
+
+# 9.- How Much is True?
+# excersise extracted from edabit in the section of js
+# , but i decided to solve it also in python, to practice
+# link = https://edabit.com/challenge/GLbuMfTtDWwDv2F73
+def counts_true(ls):
+    res = [True for el in ls if el == True].count(True)
+    return res
+
+counts_true_lam = lambda ls: len(list(filter(lambda el: el == True, ls)))
+# TEST:
+# print(counts_true([True, False, True, True]))
+print(counts_true_lam([True, False, True, True]))
+
 
 
